@@ -1,7 +1,7 @@
 import { Component } from './component.js';
 import { passwordStore } from '../password-store.js';
 
-export class Toggle extends Component {
+export class Checkbox extends Component {
   constructor(props) {
     super({
       props,
@@ -9,21 +9,21 @@ export class Toggle extends Component {
       element: document.getElementById(props.id),
     })
 
-    this.updateToggleValue = this.updateToggleValue.bind(this);
+    this.updateCheckboxValue = this.updateCheckboxValue.bind(this);
   }
 
-  updateToggleValue(event) {
-    passwordStore.setState(this.props.id, event.target.checked);
+  updateCheckboxValue(event) {
+    passwordStore.setState(this.props.stateKey, event.target.checked);
   }
 
   render() {
-    const checkedAttr = passwordStore.state[this.props.id] ? 'checked' : '';
+    const checkedAttr = passwordStore.state[this.props.stateKey] ? 'checked' : '';
 
     this.element.innerHTML = `
       <span>${this.props.name}</span>
       <input type="checkbox" class="checkbox" ${checkedAttr} />
     `;
 
-    this.element.querySelector('input').addEventListener('change', this.updateToggleValue);
+    this.element.querySelector('input').addEventListener('change', this.updateCheckboxValue);
   }
 }

@@ -6,37 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Password Generator - A minimalist React demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Aleo:700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAahJREFUOBGtlD9PwlAUxVtIuzQkLMYFRhMnJhYXV1YSR2fCh3DT1cFvQBdXV1ZICCtBJheCJUZEHTCxoUR6vefpfXm0kIByktN73ut7v970n2XtWTbzMuzlnrg2YO6eYMBkAHSQcrmcRUR/cjabBQJSHaqRMflzaocjGvkVoUPcx38pjmPZHwOo8TJr1mazaRWLRWXkpJZL/Tw11eNF5Hked55WoVDABZWRkwrDUM6HuBg6XCAsFqog7qT5fC7rIwmoGFAURckGqNFoSAcqJxcEQSDnA4DQIfSBw2w2Q9lJxh7FEOALKJPJJAVrtVp6zswyOZ1OJb4iCPARg+FwiLIiE2JmWTQejyU+IQjwHoNut4uyotFopL8e5KQGg4FMPUhAPWGT4zjk+37yvm8ct9ttyufz8lBOTSDyJaBwpVKhfr+/EYQnW6/XybZtgfm8b63OefaNrRZXq1XqdDoa3Ov1qFarkeu6AsLrdsHWfwfOKR3wzDX7k602lkolKpfLAkH9Yt+yj9lb65BXXrGf2QJ753zDPmKv1TZ/Gvwvz9h4I+7Y+lvjnNI3i3VfCXo39E4AAAAASUVORK5CYII=">
 </head>
 
 <body>
-
-  <main>
-    <div id="password">
-      <span class="password-text"></span>
-      <button class="refresh">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <form class="main">
+    <h1 class="title"><span>Password</span> <span>Generator</span></h1>
+    <div id="password" class="password">
+      <div class="password__text"></div>
+      <button class="password__refresh">
+        <svg xmlns="http://www.w3.org/2000/svg" class="refresh-icon" viewBox="0 0 18 18">
           <path
             d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z" />
         </svg>
       </button>
     </div>
-    <label id="length-slider" class="length-slider">
-      <div>Password length</div>
-      <input type="range" min="8" max="20" value="10" />
-    </label>
-    <div>
-      <label id="hasNumbers">
-        <span>Has Numbers?</span>
+    <div class="options">
+      <label id="length-slider" class="length-slider">
+        <div>Password Length:
+          <output id="character-count">10</output>
+        </div>
+        <input type="range" min="8" max="20" value="10" />
+      </label>
+      <label id="numbers" class="pad-top">
+        <span>Numbers</span>
         <input type="checkbox" class="checkbox" />
       </label>
-      <label id="hasSymbols">
-        <span>Has Symbols?</span>
+      <label id="symbols" class="pad-top">
+        <span>Symbols</span>
         <input type="checkbox" class="checkbox" />
       </label>
     </div>
-
-  </main>
+  </form>
   <script type="module" src="/main.js"></script>
 </body>
 

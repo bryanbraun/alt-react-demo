@@ -1,4 +1,4 @@
-# Minimalist React Demo
+# Alt React Demo
 
 This is a demo app that uses vanilla JavaScript and a react-like architecture to build a client-side app, with no builds or tooling.
 

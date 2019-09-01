@@ -8,18 +8,18 @@ import { passwordStore } from '../password-store.js';
 export class Component {
   constructor(params = {}) {
 
-    // Allows us to access props outside the constructor.
+    // Allow us to access props outside the constructor.
     this.props = params.props;
 
-    // Store the HTML element to attach the render to if set.
+    // Store the HTML element for the component, so we can reference it with `this.element`.
     if (params.hasOwnProperty('element')) {
       this.element = params.element;
     }
 
-    // A default render function, just in case the inheriting component doesn't set one.
+    // Set a default render function, just in case the inheriting component doesn't set one.
     this.render = this.render || function () { };
 
-    // If one or more renderTrigger event names are passed, subscribe re-renders to those events.
+    // If a renderTrigger event names is passed, subscribe re-renders to that event.
     if (params.renderTrigger) {
       passwordStore.subscribe(params.renderTrigger, () => this.render());
     }
