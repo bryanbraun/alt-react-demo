@@ -1,5 +1,5 @@
 import { Component } from './component.js';
-import { passwordStore } from '../password-store.js';
+import { store } from '../password-store.js';
 
 export class CharacterCount extends Component {
   constructor(props) {
@@ -10,6 +10,6 @@ export class CharacterCount extends Component {
   }
 
   render() {
-    this.element.innerHTML = `${passwordStore.state.passwordLength}`;
+    this.element.innerHTML = store.state.passwordLength;
   }
 }

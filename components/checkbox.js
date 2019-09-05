@@ -1,5 +1,5 @@
 import { Component } from './component.js';
-import { passwordStore } from '../password-store.js';
+import { store } from '../password-store.js';
 
 export class Checkbox extends Component {
   constructor(props) {
@@ -7,23 +7,26 @@ export class Checkbox extends Component {
       props,
       renderTrigger: props.id,
       element: document.getElementById(props.id),
-    })
+    });
 
-    this.updateCheckboxValue = this.updateCheckboxValue.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  updateCheckboxValue(event) {
-    passwordStore.setState(this.props.stateKey, event.target.checked);
+  handleChange(event) {
+    store.setState(this.props.stateKey, event.target.checked);
   }
 
   render() {
-    const checkedAttr = passwordStore.state[this.props.stateKey] ? 'checked' : '';
+    const checkedAttr = store.state[this.props.stateKey] ? 'checked' : '';
 
     this.element.innerHTML = `
       <span>${this.props.name}</span>
-      <input type="checkbox" class="checkbox" ${checkedAttr} />
+      <input
+        type="checkbox"
+        ${checkedAttr}
+      />
     `;
 
-    this.element.querySelector('input').addEventListener('change', this.updateCheckboxValue);
+    this.element.querySelector('input').addEventListener('change', this.handleChange);
   }
 }

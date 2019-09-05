@@ -1,4 +1,4 @@
-import { passwordStore } from '../password-store.js';
+import { store } from '../password-store.js';
 
 // This base component lets us inherit the following functionality:
 //
@@ -21,7 +21,7 @@ export class Component {
 
     // If a renderTrigger event names is passed, subscribe re-renders to that event.
     if (params.renderTrigger) {
-      passwordStore.subscribe(params.renderTrigger, () => this.render());
+      store.subscribe(params.renderTrigger, () => this.render());
     }
   }
 }
