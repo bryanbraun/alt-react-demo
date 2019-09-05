@@ -1,10 +1,8 @@
 # Alt React Demo
 
-This app demonstrates a React-like application with all of the tooling complexity removed. No transpiling, no build steps, and no dependencies.
+This is a build-free alternative to React, written in Vanilla JS. There's no transpiling, no build steps, and no dependencies.
 
-To do this, we lean on JavaScript features like ES6 modules, template strings, and classes. These features have surprisingly good browser support today, which wasn't the case when React was first created.
-
-There's practically no framework here. There's about 50 lines of JS defining a simple setState function, and a pub/sub system for re-rendering components. Everything else is application code, following React's conventions.
+For the thinking behind this, see the companion blog post: [Web-dev nirvana, and why I needed to let go of React to reach it](https://bryanbraun.com/2019/09/02/web-dev-nirvana-and-why-I-needed-to-let-go-of-reactjs-to-reach-it/)
 
 The demo app is a Password Generator. See it here: [https://bryanbraun.com/alt-react-demo](https://www.bryanbraun.com/alt-react-demo/)
 
