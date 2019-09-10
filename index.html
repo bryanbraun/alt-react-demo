@@ -15,30 +15,32 @@
 <body>
   <form class="main">
     <h1 class="title"><span>Password</span> <span>Generator</span></h1>
-    <div id="password" class="password">
-      <div class="password__text"></div>
-      <button class="password__refresh">
-        <svg xmlns="http://www.w3.org/2000/svg" class="refresh-icon" viewBox="0 0 18 18">
-          <path
-            d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z" />
-        </svg>
-      </button>
-    </div>
-    <div class="options">
-      <label id="length-slider" class="length-slider">
-        <div>Password Length:
-          <output id="character-count">10</output>
-        </div>
-        <input type="range" min="8" max="20" value="10" />
-      </label>
-      <label id="numbers" class="pad-top">
-        <span>Numbers</span>
-        <input type="checkbox" class="checkbox" />
-      </label>
-      <label id="symbols" class="pad-top">
-        <span>Symbols</span>
-        <input type="checkbox" class="checkbox" />
-      </label>
+    <div id="app">
+      <div id="password" class="password">
+        <div class="password__text"></div>
+        <button class="password__refresh">
+          <svg xmlns="http://www.w3.org/2000/svg" class="refresh-icon" viewBox="0 0 18 18">
+            <path
+              d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z" />
+          </svg>
+        </button>
+      </div>
+      <div class="options">
+        <label id="length-slider" class="length-slider">
+          <div>Password Length:
+            <output id="character-count">10</output>
+          </div>
+          <input type="range" min="8" max="20" value="10" />
+        </label>
+        <label id="numbers" class="pad-top">
+          <span>Numbers</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+        <label id="symbols" class="pad-top">
+          <span>Symbols</span>
+          <input type="checkbox" class="checkbox" />
+        </label>
+      </div>
     </div>
   </form>
   <a href="https://github.com/bryanbraun/alt-react-demo"><img style="position: absolute; top: 0; right: 0; border: 0;"

@@ -1,10 +1,9 @@
 import { Component } from './component.js';
-import { store } from '../password-store.js';
 
 export class Password extends Component {
-  constructor() {
+  constructor(props) {
     super({
-      renderTrigger: 'state',
+      props,
       element: document.getElementById('password'),
     })
   }
@@ -13,14 +12,14 @@ export class Password extends Component {
     let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let newPassword = '';
 
-    if (store.state.characterOptions.hasNumbers) {
+    if (this.props.hasNumbers) {
       charset = `${charset}0123456789`;
     }
-    if (store.state.characterOptions.hasSymbols) {
+    if (this.props.hasSymbols) {
       charset = `${charset}!#$%&()*+,-.:;=?@[]^_{}~`;
     }
 
-    for (var i = 0; i < store.state.passwordLength; i++) {
+    for (var i = 0; i < this.props.passwordLength; i++) {
       newPassword += charset.charAt(Math.floor(Math.random() * charset.length));
     }
 

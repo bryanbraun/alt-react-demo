@@ -1,28 +1,29 @@
 import { Component } from './component.js';
-import { CharacterCount } from './character-count.js';
-import { store } from '../password-store.js';
 
 export class LengthSlider extends Component {
-  constructor() {
+  constructor(props) {
     super({
+      props,
       element: document.getElementById('length-slider'),
     });
+
+    this.handleSliderChange = this.handleSliderChange.bind(this);
   }
 
-  updateLength(event) {
-    store.setState('passwordLength', parseInt(event.target.value));
+  handleSliderChange(event) {
+    var newRangeNumber = parseInt(event.target.value);
+    this.element.form.characterCount.value = newRangeNumber;
+    this.props.updateLength(newRangeNumber);
   }
 
   render() {
     this.element.innerHTML = `
       <div>
-        Password Length: <output id="character-count"></output>
+        Password Length: <output id="characterCount">${this.props.passwordLength}</output>
       </div>
-      <input type="range" min="8" max="20" value="${store.state.passwordLength}" />
+      <input type="range" min="8" max="20" value="${this.props.passwordLength}" />
     `;
 
-    this.element.querySelector('input').addEventListener('input', this.updateLength);
-
-    new CharacterCount({ id: 'character-count' }).render();
+    this.element.querySelector('input').addEventListener('input', this.handleSliderChange);
   }
 }

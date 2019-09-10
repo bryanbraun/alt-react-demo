@@ -1,23 +1,15 @@
 import { Component } from './component.js';
-import { store } from '../password-store.js';
 
 export class Checkbox extends Component {
   constructor(props) {
     super({
       props,
-      renderTrigger: props.id,
       element: document.getElementById(props.id),
     });
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    store.setState(this.props.stateKey, event.target.checked);
   }
 
   render() {
-    const checkedAttr = store.state[this.props.stateKey] ? 'checked' : '';
+    const checkedAttr = this.props.isChecked ? 'checked' : '';
 
     this.element.innerHTML = `
       <span>${this.props.name}</span>
@@ -27,6 +19,6 @@ export class Checkbox extends Component {
       />
     `;
 
-    this.element.querySelector('input').addEventListener('change', this.handleChange);
+    this.element.querySelector('input').addEventListener('change', this.props.handleCheck);
   }
 }
