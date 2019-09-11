@@ -13,7 +13,7 @@ export class Checkbox extends Component {
   }
 
   handleChange(event) {
-    store.setState(this.props.stateKey, event.target.checked);
+    store.set(this.props.stateKey, event.target.checked);
   }
 
   render() {

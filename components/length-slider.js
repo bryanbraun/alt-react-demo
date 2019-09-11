@@ -10,7 +10,7 @@ export class LengthSlider extends Component {
   }
 
   updateLength(event) {
-    store.setState('passwordLength', parseInt(event.target.value));
+    store.set('passwordLength', parseInt(event.target.value));
   }
 
   render() {
