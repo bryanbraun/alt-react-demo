@@ -12,7 +12,7 @@
     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAahJREFUOBGtlD9PwlAUxVtIuzQkLMYFRhMnJhYXV1YSR2fCh3DT1cFvQBdXV1ZICCtBJheCJUZEHTCxoUR6vefpfXm0kIByktN73ut7v970n2XtWTbzMuzlnrg2YO6eYMBkAHSQcrmcRUR/cjabBQJSHaqRMflzaocjGvkVoUPcx38pjmPZHwOo8TJr1mazaRWLRWXkpJZL/Tw11eNF5Hked55WoVDABZWRkwrDUM6HuBg6XCAsFqog7qT5fC7rIwmoGFAURckGqNFoSAcqJxcEQSDnA4DQIfSBw2w2Q9lJxh7FEOALKJPJJAVrtVp6zswyOZ1OJb4iCPARg+FwiLIiE2JmWTQejyU+IQjwHoNut4uyotFopL8e5KQGg4FMPUhAPWGT4zjk+37yvm8ct9ttyufz8lBOTSDyJaBwpVKhfr+/EYQnW6/XybZtgfm8b63OefaNrRZXq1XqdDoa3Ov1qFarkeu6AsLrdsHWfwfOKR3wzDX7k602lkolKpfLAkH9Yt+yj9lb65BXXrGf2QJ753zDPmKv1TZ/Gvwvz9h4I+7Y+lvjnNI3i3VfCXo39E4AAAAASUVORK5CYII=">
 </head>
 
-<body>
+<body data-theme="light">
   <form class="main">
     <h1 class="title"><span>Password</span> <span>Generator</span></h1>
     <div id="password" class="password">
@@ -33,11 +33,17 @@
       </label>
       <label id="numbers" class="pad-top">
         <span>Numbers</span>
-        <input type="checkbox" class="checkbox" />
+        <input type="checkbox" />
       </label>
       <label id="symbols" class="pad-top">
         <span>Symbols</span>
-        <input type="checkbox" class="checkbox" />
+        <input type="checkbox" />
+      </label>
+    </div>
+    <div id="dark-mode" class="dark-mode">
+      <label>
+        <span>Dark Mode</span>
+        <input type="checkbox" />
       </label>
     </div>
   </form>

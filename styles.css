@@ -1,12 +1,25 @@
 :root {
-  /* colors */
-  --pw-background-color: #efefef;
+  --pw-page-color: #ffffff;
+  --pw-field-background-color: #efefef;
   --pw-button-focus-color: #dddddd;
   --pw-border-color: #cfcfcf;
+  --pw-font-color: #222222;
+
+  --sans: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+}
+
+[data-theme="dark"] {
+  --pw-page-color: #222222;
+  --pw-field-background-color: #222222;
+  --pw-button-focus-color: #666666;
+  --pw-border-color: #666666;
+  --pw-font-color: #ffffff;
 }
 
 body {
   margin: 0;
+  color: var(--pw-font-color);
+  background-color: var(--pw-page-color);
 }
 
 .title {
@@ -31,7 +44,7 @@ body {
 .password__text {
   flex: 1 1 100%;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  background-color: var(--pw-background-color);
+  background-color: var(--pw-field-background-color);
   border: 1px solid var(--pw-border-color);
   border-right: 0;
   text-align: center;
@@ -42,7 +55,7 @@ body {
 
 .password__refresh {
   flex: 0 0 auto;
-  background-color: var(--pw-background-color);
+  background-color: var(--pw-field-background-color);
   border: 1px solid var(--pw-border-color);
   padding: 1rem;
   cursor: pointer;
@@ -54,6 +67,9 @@ body {
   width: 36px;
   height: 36px;
 }
+.refresh-icon path {
+  fill: var(--pw-font-color);
+}
 
 .password__refresh:focus {
   background-color: var(--pw-button-focus-color);
@@ -62,7 +78,7 @@ body {
 .options {
   display: flex;
   justify-content: space-evenly;
-  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+  font-family: var(--sans);
 }
 
 input[type="range"] {
@@ -72,6 +88,15 @@ input[type="range"] {
 
 .pad-top {
   padding-top: 5px;
+}
+
+.dark-mode {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  border: 1px solid var(--pw-border-color);
+  font-family: var(--sans);
 }
 
 @media (max-width: 600px) {
