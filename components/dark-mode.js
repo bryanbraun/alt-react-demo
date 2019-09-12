@@ -2,9 +2,7 @@ import { Component } from './component.js';
 
 export class DarkMode extends Component {
   constructor() {
-    super({
-      element: document.getElementById('dark-mode'),
-    });
+    super({ element: document.getElementById('dark-mode') });
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -14,15 +12,19 @@ export class DarkMode extends Component {
   }
 
   render() {
+    const isDark = this.state.isDark;
+
+    document.body
+      .setAttribute('data-theme', isDark ? 'dark' : 'light');
+
     this.element.innerHTML = `
       <label>
         <span>Dark Mode</span>
-        <input type="checkbox" ${this.state.isDark ? 'checked' : ''} />
+        <input type="checkbox" ${isDark ? 'checked' : ''} />
       </label>
     `;
 
-    this.element.querySelector('input').addEventListener('change', this.handleChange);
-
-    document.body.setAttribute('data-theme', this.state.isDark ? 'dark' : 'light');
+    this.element.querySelector('input')
+      .addEventListener('change', this.handleChange);
   }
 }
